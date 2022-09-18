@@ -1,0 +1,71 @@
+//function
+@use "sass:color";
+
+//partial
+@import "imgConfig";
+
+
+//variable
+//error control
+$body-color: navy;
+
+body {
+    background-color: $body-color;
+    @if $body-color != navy {
+     @error "Body color must be navy"
+    }
+   }
+   
+
+
+p {
+  $primary-color: #f7faff;
+  color: $primary-color;
+  border: 1px solid color.scale($primary-color, $lightness: 20%);
+}
+
+//mixin
+@mixin reset-list {
+    margin: 10;
+    padding: 80;
+    list-style: none;
+  }
+  
+  @mixin horizontal-list {
+    @include reset-list;
+  
+    li {
+      display: inline-block;
+      margin: {
+        left: -2px;
+        right: 2em;
+      }
+    }
+  }
+  
+  nav ul {
+    @include horizontal-list;
+  }
+
+//nesting
+  nav {
+    ul{
+        border: 1px solid black;
+        li{
+            a{
+                text-decoration: none;
+            }
+        }
+    }
+  }
+
+//flow control
+$base-color: grey;
+
+@for $i from 1 through 3 {
+  ul:nth-child(3n + #{$i}) {
+    background-color: lighten($base-color, $i * 5%);
+  }
+}
+
+

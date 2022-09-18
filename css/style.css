@@ -1,0 +1,45 @@
+img {
+  border-radius: 10;
+  border: 1px solid white;
+}
+
+body {
+  background-color: navy;
+}
+
+p {
+  color: #f7faff;
+  border: 1px solid #f9fbff;
+}
+
+nav ul {
+  margin: 10;
+  padding: 80;
+  list-style: none;
+}
+nav ul li {
+  display: inline-block;
+  margin-left: -2px;
+  margin-right: 2em;
+}
+
+nav ul {
+  border: 1px solid black;
+}
+nav ul li a {
+  text-decoration: none;
+}
+
+ul:nth-child(3n+1) {
+  background-color: #8d8d8d;
+}
+
+ul:nth-child(3n+2) {
+  background-color: #9a9a9a;
+}
+
+ul:nth-child(3n+3) {
+  background-color: #a6a6a6;
+}
+
+/*# sourceMappingURL=style.css.map */
